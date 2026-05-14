@@ -34,6 +34,7 @@ class MovieSearchController extends Controller
 
         if ($searchResults['Response'] === 'True') {
             $response['data'] = MovieListItemResource::collection($searchResults['Search']);
+            // touch() to affect updated_at and not created_at
             Search::updateOrCreate([
                 'session_id' => $request->session()->getId(),
                 'query' => $searchQuery

@@ -5,11 +5,6 @@ namespace App\Services;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
-/**
- * OmdbService class.
- *
- * This class provides methods for interacting with the OMDB API.
- */
 class OmdbService
 {
     private readonly string $apiKey;
@@ -23,25 +18,12 @@ class OmdbService
         $this->apiRoute = config('services.omdb.route');
     }
 
-    /**
-     * Generate a cache key for the given type and value.
-     *
-     * @param string $type The type of the cache key.
-     * @param string $value The value to generate the cache key from.
-     * @return string The generated cache key.
-     */
     private function getCacheKey(string $type, string $value): string
     {
         return \sprintf("omdb.%s.%s", $type, md5($value));
     }
 
-    /**
-     * Fetch data from the OMDB API and cache it.
-     *
-     * @param string $cacheKey The cache key.
-     * @param array $parameters The request parameters.
-     * @return array The fetched data.
-     */
+    /** @throws \RuntimeException When OMDB returns non-2xx */
     private function fetch(string $cacheKey, array $parameters): array
     {
         return Cache::remember($cacheKey, self::CACHE_TTL, function () use ($parameters) {
@@ -59,12 +41,7 @@ class OmdbService
         });
     }
 
-    /**
-     * Find movie details by IMDb ID.
-     *
-     * @param string $imdbId The IMDb ID of the movie.
-     * @return array The movie details.
-     */
+    /** @return array{Response: string, Title?: string, Year?: string, imdbID?: string, ...} */
     public function find(string $imdbId): array
     {
         return $this->fetch(
@@ -76,12 +53,7 @@ class OmdbService
         );
     }
 
-    /**
-     * Search for movies by query.
-     *
-     * @param string $searchQuery The search query.
-     * @return array The search results.
-     */
+    /** @return array{Response: string, Search?: list<array{imdbID: string, Title: string, Year: string, Poster: string}>, totalResults?: string, ...} */
     public function search(string $searchQuery): array
     {
         return $this->fetch(
