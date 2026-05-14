@@ -1,0 +1,28 @@
+services:
+  app:
+    container_name: "lvo-app"
+    build: ./.docker/php
+    restart: "on-failure"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./app:/var/www/html:rw
+      - ./.docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./.docker/php/.bashrc:/root/.bashrc
+
+  nginx:
+    container_name: "lvo-web"
+    image: nginx:alpine
+    restart: "on-failure"
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    volumes:
+      - ./app:/var/www/html
+      - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./.docker/logs/nginx:/var/log/nginx
+
+networks:
+  default:
+    name: lvo-network
