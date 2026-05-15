@@ -46,6 +46,6 @@ class MovieResource extends JsonResource
     {
         $value = $this->resource[$field] ?? null;
 
-        return $value === "N/A" ? null : $value;
+        return $value === 'N/A' ? null : $value;
     }
 }

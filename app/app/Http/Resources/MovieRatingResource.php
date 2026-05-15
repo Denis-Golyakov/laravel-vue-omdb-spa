@@ -15,8 +15,8 @@ class MovieRatingResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'source' => $this->resource["Source"],
-            'value' => $this->resource["Value"],
+            'source' => $this->resource['Source'],
+            'value' => $this->resource['Value'],
         ];
     }
 }

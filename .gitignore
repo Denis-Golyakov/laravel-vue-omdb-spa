@@ -33,3 +33,6 @@ auth.json
 # Docker
 .docker/logs/laravel
 .docker/logs/nginx/*
+
+# VSCode
+/.vscode

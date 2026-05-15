@@ -36,7 +36,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { computed, onMounted, ref, watch } from 'vue';
 import { findMovie } from '@/api';
-import { Movie } from '@/types/api';
+import type { Movie } from '@/types/api';
 import { ApiError } from '@/types/errors';
 import { POSTER_FALLBACK_URL } from '@/constants';
 

@@ -1,4 +1,4 @@
-# OMDB Movie Search App
+# OMDb Movie Search App
 
 A full-stack movie search application built on top of the [OMDB API](http://www.omdbapi.com).
 
@@ -94,7 +94,7 @@ The suite covers:
 
 Tests use an in-memory SQLite database (`:memory:`) and the `database` session driver against the same in-memory connection - fast, isolated, and self-contained.
 
-Frontend tests were deliberately omitted; see [Decisions](#decisions) below for the rationale.
+Frontend tests were deliberately omitted; see [Decisions](#architecture-decisions) below for the rationale.
 
 ---
 

@@ -40,7 +40,7 @@
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { onMounted, ref, watch } from 'vue';
-import { MovieListItem } from '@/types/api';
+import type { MovieListItem } from '@/types/api';
 import { ApiError } from '@/types/errors';
 import { POSTER_FALLBACK_URL } from '@/constants';
 import { getHistory, searchMovies } from '@/api';
