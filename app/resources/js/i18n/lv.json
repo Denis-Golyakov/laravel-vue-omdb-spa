@@ -1,1 +1,29 @@
-{}
+{
+    "app_header": "Filmu meklēšanas lietotne",
+    "buttons": {
+        "back": "Atgriezties",
+        "search": "Meklēt"
+    },
+    "errors": {
+        "not_found": "Filma nav atrasta",
+        "service_unavailable": "Pakalpojums nav pieejams",
+        "network": "Tīkla kļūda",
+        "unknown": "Nezināma kļūda"
+    },
+    "home": {
+        "search_history": "Iepriekšējie meklējumi:",
+        "search_no_results": "Nekas nav atrasts",
+        "search_placeholder": "Meklējiet filmu..."
+    },
+    "loading": "Ielādē...",
+    "movie": {
+        "director": "Režisors",
+        "writer": "Scenārists",
+        "actors": "Aktieri",
+        "language": "Valoda",
+        "country": "Valsts",
+        "awards": "Apbalvojumu saraksts",
+        "metascore": "Metascore",
+        "box_office": "Kase"
+    }
+}

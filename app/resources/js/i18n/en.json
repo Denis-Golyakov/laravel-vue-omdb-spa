@@ -1,1 +1,29 @@
-{}
+{
+    "app_header": "Movie Search App",
+    "buttons": {
+        "back": "Back",
+        "search": "Search"
+    },
+    "errors": {
+        "not_found": "Movie not found",
+        "service_unavailable": "Service unavailable",
+        "network": "Network error",
+        "unknown": "Unknown error"
+    },
+    "home": {
+        "search_history": "Past searches:",
+        "search_no_results": "No results found",
+        "search_placeholder": "Search for a movie..."
+    },
+    "loading": "Loading...",
+    "movie": {
+        "director": "Director",
+        "writer": "Writer",
+        "actors": "Actors",
+        "language": "Language",
+        "country": "Country",
+        "awards": "Award List",
+        "metascore": "Metascore",
+        "box_office": "Box Office"
+    }
+}

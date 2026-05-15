@@ -19,9 +19,4 @@ const router = createRouter({
   ]
 })
 
-router.afterEach((to, from) => {
-  // DEBUG Logging
-  // console.log('router::afterEach', from, to)
-})
-
 export default router
